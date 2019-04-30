@@ -12,7 +12,7 @@ def load_data(filename):
     return load_csv(filename)
 
 def load_training_data():
-  return load_data("dataset/drug-data/drugsTrain_raw.csv")
+  return load_data("dataset/drug-data/drugsTrain_raw_clean.csv")
 
 def load_testing_data():
-  return load_data("dataset/drug-data/drugsTest_raw.csv")
+  return load_data("dataset/drug-data/drugsTest_raw_clean.csv")
