@@ -1,5 +1,4 @@
 import csv
-import pandas as pd 
 
 # importing data into a list
 # def load_csv(filename):
