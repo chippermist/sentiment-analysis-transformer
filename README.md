@@ -1,3 +1,5 @@
+<img src="https://travis-ci.com/chippermist/cs273-sentiment-analysis.svg?branch=master" />
+
 # UC Irvine Drug Sentiment Analysis
 ###### CS273 - Data & Knowledge Bases
 
