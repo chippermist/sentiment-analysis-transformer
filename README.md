@@ -12,6 +12,24 @@ Using sentiment analysis, we can figure out based on someone's review and condit
 
 [UCI ML Drug Review dataset](https://www.kaggle.com/jessicali9530/kuc-hackathon-winter-2018)
 
+
+## Setup
+
+Since the code is written in Python 3.x, we have set up a virtualenv to make sure all the required modules and settings are preserved.
+
+If you already have `virtualenv` you can skip this step:
+```
+pip install virtualenv
+```
+
+To set up and run the files use:
+```
+cd cs273-sentiment-analysis/
+source sentiment-analysis/bin/activate
+```
+Now you will be in a virtualenv running Python 3.x. To deactivate and return back into standard mode, run `deactivate`.
+
+
 ## Team Members
 
 
