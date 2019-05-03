@@ -26,8 +26,9 @@ To set up and run the files use:
 ```
 cd cs273-sentiment-analysis/
 source sentiment-analysis/bin/activate
+pip install -r requirements.txt
 ```
-Now you will be in a virtualenv running Python 3.x. To deactivate and return back into standard mode, run `deactivate`.
+Now you will be in a `virtualenv` running Python 3.x. To deactivate and return back into standard mode, run `deactivate`.
 
 
 ## Team Members
