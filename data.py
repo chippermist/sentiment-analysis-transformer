@@ -14,7 +14,7 @@ def load_csv(filename):
   reader = csv.DictReader(open(filename))
   result = {}
   for row in reader:
-    for column, value in row.iteritems():
+    for column, value in row.items(): # change to iteritems() for python 2.x
         result.setdefault(column, []).append(value)
   return result
 
