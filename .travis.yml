@@ -4,6 +4,6 @@ python:
 # command to install dependencies
 install:
   - pip install -r requirements.txt
-  - sudo mv nltk_data /usr/share/nltk_data
+  - python -m nltk.downloader punkt
 script:
   - python test.py
