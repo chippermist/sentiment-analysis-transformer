@@ -49,6 +49,8 @@ def call_cleanup():
     generate_clean_csv('dataset/drug-data/drugsTest_raw.csv', 'dataset/drug-data/drugsTest_raw_clean.csv')
     print('Clean testing data -- created.')
     print(colored('Cleanup file creation successful', 'green'))
+  else:
+    print(colored('Cleanup cancelled.', 'red'))
 
 
 if __name__ == '__main__':
