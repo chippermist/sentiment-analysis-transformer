@@ -1,5 +1,6 @@
 import csv
 from string import punctuation
+from termcolor import colored
 
 
 # Generates the cleaner data after removing unnecessary characters
@@ -47,6 +48,7 @@ def call_cleanup():
     # generate clean csv for testing data
     generate_clean_csv('dataset/drug-data/drugsTest_raw.csv', 'dataset/drug-data/drugsTest_raw_clean.csv')
     print('Clean testing data -- created.')
+    print(colored('Cleanup file creation successful', 'green'))
 
 
 if __name__ == '__main__':
