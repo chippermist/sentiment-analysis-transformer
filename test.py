@@ -1,6 +1,7 @@
 from data import load_testing_data, load_training_data
 from ner import name_entity_recognition
 from cleanup import call_cleanup
+from termcolor import colored
 import os
 
 if __name__ == '__main__':
@@ -8,7 +9,7 @@ if __name__ == '__main__':
   # check if file exists
   exists = os.path.isfile('dataset/drug-data/drugsTrain_raw_clean.csv')
   if not exists:
-    print('File does not exist. \n')
+    print(colored('\nFile does not exist.', 'red'))
     call_cleanup()
   else:
     raw_data = load_training_data()
