@@ -37,15 +37,20 @@ def generate_clean_csv(filename, newfilename):
         row[4] = 'positive'
       outputfile.writerow(row)
 
-if __name__ == '__main__':
+def call_cleanup():
   print('You are about to create new data files.\n')
   if input('Are you sure you want to run cleanup on data? (y/n) ') == 'y':
     # generate clean csv for training data
     generate_clean_csv('dataset/drug-data/drugsTrain_raw.csv', 'dataset/drug-data/drugsTrain_raw_clean.csv')
-    print('Clean training data -- created.\n')
+    print()
+    print('Clean training data -- created.')
     # generate clean csv for testing data
     generate_clean_csv('dataset/drug-data/drugsTest_raw.csv', 'dataset/drug-data/drugsTest_raw_clean.csv')
     print('Clean testing data -- created.')
+
+
+if __name__ == '__main__':
+  call_cleanup()
 
 
 
