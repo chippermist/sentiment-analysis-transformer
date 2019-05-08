@@ -19,7 +19,7 @@ Using sentiment analysis, we can figure out based on someone's review and condit
 
 Since the code is written in Python 3.x, we have set up a virtualenv to make sure all the required modules and settings are preserved.
 
-If you already have `virtualenv` you can skip this step:
+If you already have `virtualenv` you can skip the first step:
 ```
 pip install virtualenv
 virtualenv -p python3 sentiment-analysis

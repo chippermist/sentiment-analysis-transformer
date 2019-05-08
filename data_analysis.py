@@ -17,6 +17,7 @@ def perform_data_analysis(raw_data):
   analyze_review_length(reviews_int)
 
 if __name__ == '__main__':
+  # simple testing code
   raw_data    = load_training_data()
   # print(raw_data.get('review')[:10])
   perform_data_analysis(raw_data)

@@ -22,7 +22,7 @@ def encode_the_words(data):
   for review in data:
       r = [vocab_to_int[w] for w in review.split()]
       reviews_int.append(r)
-  # print (reviews_int[0:3])
+  # print(reviews_int[0:3])
   return reviews_int
 
 def encode_the_labels(labels):
