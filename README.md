@@ -29,8 +29,8 @@ To set up and run the files use:
 cd cs273-sentiment-analysis/
 virtualenv -p python3 sentiment-analysis
 source sentiment-analysis/bin/activate
-sudo pip install -r requirements.txt
-sudo python -m nltk.downloader all
+pip install -r requirements.txt
+python -m nltk.downloader all
 ```
 Now you will be in a `virtualenv` running Python 3.x. To deactivate and return back into standard mode, run `deactivate`.
 
