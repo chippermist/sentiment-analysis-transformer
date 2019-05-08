@@ -22,3 +22,5 @@ if __name__ == '__main__':
 
     # print(len(train_data.get('rating')))
     # print(sum(1 for x in train_data.get('rating') if x == 'neutral'))
+
+    print('Test file', colored('successfully', 'green'), 'run.')
