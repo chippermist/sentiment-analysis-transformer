@@ -22,12 +22,12 @@ Since the code is written in Python 3.x, we have set up a virtualenv to make sur
 If you already have `virtualenv` you can skip the first step:
 ```
 pip install virtualenv
-virtualenv -p python3 sentiment-analysis
 ```
 
 To set up and run the files use:
 ```
 cd cs273-sentiment-analysis/
+virtualenv -p python3 sentiment-analysis
 source sentiment-analysis/bin/activate
 sudo pip install -r requirements.txt
 sudo python -m nltk.downloader all
