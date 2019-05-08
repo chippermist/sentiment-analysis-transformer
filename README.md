@@ -35,6 +35,9 @@ python -m nltk.downloader all
 Now you will be in a `virtualenv` running Python 3.x. To deactivate and return back into standard mode, run `deactivate`.
 
 
+Note:
+If you're running on windows replace `source sentiment-analysis/bin/activate` with `venv\Scripts\activate`.
+
 ## Team Members
 
 * Chinmay Garg
