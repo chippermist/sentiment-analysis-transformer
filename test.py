@@ -12,13 +12,13 @@ if __name__ == '__main__':
     print(colored('\nFile does not exist.', 'red'))
     call_cleanup()
   else:
-    raw_data = load_training_data()
-    print(raw_data.keys())
+    train_data = load_training_data()
+    print(train_data.keys())
     print()
 
     # named entity recognition using nltk
-    entities = name_entity_recognition(raw_data)
+    entities = name_entity_recognition(train_data)
     print(entities[:2])
 
-    # print(len(raw_data.get('rating')))
-    # print(sum(1 for x in raw_data.get('rating') if x == 'neutral'))
+    # print(len(train_data.get('rating')))
+    # print(sum(1 for x in train_data.get('rating') if x == 'neutral'))
