@@ -11,7 +11,7 @@ import csv
 
 # importing data into a dictionary
 def load_csv(filename):
-  reader = csv.DictReader(open(filename))
+  reader = csv.DictReader(open(filename, encoding="utf8"))
   result = {}
   for row in reader:
     for column, value in row.items(): # change to iteritems() for python 2.x

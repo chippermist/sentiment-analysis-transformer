@@ -5,7 +5,7 @@ from termcolor import colored
 
 # Generates the cleaner data after removing unnecessary characters
 def generate_clean_csv(filename, newfilename):
-  inputfile = csv.reader(open(filename,'r'))
+  inputfile = csv.reader(open(filename,'r', encoding="utf8"))
 
   # replace and overwrite if exists
   # create if doesn't -- writing new clean data
