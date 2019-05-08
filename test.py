@@ -18,4 +18,7 @@ if __name__ == '__main__':
 
     # named entity recognition using nltk
     entities = name_entity_recognition(raw_data)
-    print(entities[10:])
+    print(entities[:2])
+
+    # print(len(raw_data.get('rating')))
+    # print(sum(1 for x in raw_data.get('rating') if x == 'neutral'))
