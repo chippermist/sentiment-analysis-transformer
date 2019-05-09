@@ -26,5 +26,31 @@ def encode_the_words(data):
   return reviews_int
 
 def encode_the_labels(labels):
-  encoded_labels = [1 if label =='positive' else -1 if label =='negative' else 0 in labels_split]
+  encoded_labels = [1 if label =='positive' else -1 if label =='negative' else 0 for label in labels]
   encoded_labels = np.array(encoded_labels)
+  return encoded_labels
+  # print (encoded_labels[:10])
+
+
+#
+# this is to pad the average review with 0's if it's not the same size
+# since LSTM/Attention/Transformer require same length input 
+# reviews_int             : from encode_the_words
+# padding_length          : user provided based on analysis 
+#
+def pad_features(reviews_int, padding_length):
+  # Return features of review_ints, where each review is padded with 0's or truncated to the input padding_length.
+  features = np.zeros((len(reviews_int), padding_length), dtype = int)
+  
+  for i, review in enumerate(reviews_int):
+    review_len = len(review)
+    
+    if review_len <= padding_length:
+      zeroes = list(np.zeros(padding_length-review_len))
+      new = zeroes+review
+    elif review_len > padding_length:
+      new = review[0:padding_length]
+    
+    features[i,:] = np.array(new)
+  
+  return features
