@@ -37,6 +37,7 @@ Now you will be in a `virtualenv` running Python 3.x. To deactivate and return b
 
 Note:
 If you're running on windows replace `source sentiment-analysis/bin/activate` with `venv\Scripts\activate`.
+On MacOS if you're having trouble with `import torch` then run `brew install libomp`.
 
 ## Team Members
 
