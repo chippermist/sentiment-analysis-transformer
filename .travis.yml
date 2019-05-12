@@ -3,7 +3,7 @@ python:
   - "3.6.5"
 # command to install dependencies
 install:
-  - pip install -r requirements.txt
+  - pip install -q -r requirements.txt 
   - python -m nltk.downloader punkt averaged_perceptron_tagger maxent_ne_chunker words stopwords
 script:
   - python test.py
