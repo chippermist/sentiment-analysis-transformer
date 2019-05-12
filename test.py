@@ -5,6 +5,8 @@ from termcolor import colored
 from tokenize_data import encode_the_words, encode_the_labels, pad_features
 import os
 import numpy as np
+import torch
+from torch.utils.data import DataLoader, TensorDataset
 
 if __name__ == '__main__':
 
@@ -47,25 +49,25 @@ if __name__ == '__main__':
     test_y = remaining_y[int(len(remaining_y)*0.5):]
 
 
-    # # create Tensor datasets
-    # train_data = TensorDataset(torch.from_numpy(train_x), torch.from_numpy(train_y))
-    # valid_data = TensorDataset(torch.from_numpy(valid_x), torch.from_numpy(valid_y))
-    # test_data = TensorDataset(torch.from_numpy(test_x), torch.from_numpy(test_y))
-    # # dataloaders
-    # batch_size = 50
-    # # make sure to SHUFFLE your data
-    # train_loader = DataLoader(train_data, shuffle=True, batch_size=batch_size)
-    # valid_loader = DataLoader(valid_data, shuffle=True, batch_size=batch_size)
-    # test_loader = DataLoader(test_data, shuffle=True, batch_size=batch_size)
+    # create Tensor datasets
+    train_data = TensorDataset(torch.from_numpy(train_x), torch.from_numpy(train_y))
+    valid_data = TensorDataset(torch.from_numpy(valid_x), torch.from_numpy(valid_y))
+    test_data = TensorDataset(torch.from_numpy(test_x), torch.from_numpy(test_y))
+    # dataloaders
+    batch_size = 50
+    # make sure to SHUFFLE your data
+    train_loader = DataLoader(train_data, shuffle=True, batch_size=batch_size)
+    valid_loader = DataLoader(valid_data, shuffle=True, batch_size=batch_size)
+    test_loader = DataLoader(test_data, shuffle=True, batch_size=batch_size)
 
-    # # obtain one batch of training data
-    # dataiter = iter(train_loader)
-    # sample_x, sample_y = dataiter.next()
-    # print('Sample input size: ', sample_x.size()) # batch_size, seq_length
-    # print('Sample input: \n', sample_x)
-    # print()
-    # print('Sample label size: ', sample_y.size()) # batch_size
-    # print('Sample label: \n', sample_y)
+    # obtain one batch of training data
+    dataiter = iter(train_loader)
+    sample_x, sample_y = dataiter.next()
+    print('Sample input size: ', sample_x.size()) # batch_size, seq_length
+    print('Sample input: \n', sample_x)
+    print()
+    print('Sample label size: ', sample_y.size()) # batch_size
+    print('Sample label: \n', sample_y)
 
 
     print('Test file', colored('successfully', 'green'), 'run.')
