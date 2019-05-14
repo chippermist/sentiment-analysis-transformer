@@ -19,20 +19,25 @@ Using sentiment analysis, we can figure out based on someone's review and condit
 
 Since the code is written in Python 3.x, we have set up a virtualenv to make sure all the required modules and settings are preserved.
 
-If you already have `virtualenv` you can skip this step:
+If you already have `virtualenv` you can skip the first step:
 ```
 pip install virtualenv
-virtualenv -p python3 sentiment-analysis
 ```
 
 To set up and run the files use:
 ```
 cd cs273-sentiment-analysis/
+virtualenv -p python3 sentiment-analysis
 source sentiment-analysis/bin/activate
 pip install -r requirements.txt
+python -m nltk.downloader all
 ```
 Now you will be in a `virtualenv` running Python 3.x. To deactivate and return back into standard mode, run `deactivate`.
 
+
+Note:
+If you're running on windows replace `source sentiment-analysis/bin/activate` with `venv\Scripts\activate`.
+On MacOS if you're having trouble with `import torch` then run `brew install libomp`.
 
 ## Team Members
 
