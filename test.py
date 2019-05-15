@@ -29,6 +29,7 @@ def main_test():
 
 
     train_data = load_training_data()
+    test_data  = load_testing_data()
     # print(train_data.keys())
     # print()
 
@@ -60,6 +61,10 @@ def main_test():
     valid_y     = remaining_y[0:int(len(remaining_y)*0.5)]
     test_x      = remaining_x[int(len(remaining_x)*0.5):]
     test_y      = remaining_y[int(len(remaining_y)*0.5):]
+
+    encoded_test_words = encode_the_words(test_data['review'])
+    test_y             = encode_the_labels(test_data['rating'])
+    test_x             = pad_features(encoded_test_words, 100)
 
     print(colored('Shape of X is', 'blue'), train_x.shape)
     print(colored('Shape of Y is', 'blue'), train_y.shape)
