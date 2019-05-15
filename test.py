@@ -81,14 +81,17 @@ def main_test():
       # print(pred.argmax())
       # print(predict_from_model(model, test_x[index]))
 
-      print('Would you like to enter a sentence? (y/n) ')
-      next_step, o, e = select.select( [sys.stdin], [], [], 50)
-      next_step       = sys.stdin.readline().strip()
-      if(next_step == 'y'):
-        sentence = input('Enter a sentence to classify: ')
-        sentence = encode_the_words([sentence])
-        sentence = pad_features(sentence, 100)
-        print(predict_from_model(model, sentence))
+
+      # UNCOMMENT THIS TO PROVIDE A SENTENCE 
+      #######################################
+      # print('Would you like to enter a sentence? (y/n) ')
+      # next_step, o, e = select.select( [sys.stdin], [], [], 15)
+      # next_step       = sys.stdin.readline().strip()
+      # if(next_step == 'y'):
+      #   sentence = input('Enter a sentence to classify: ')
+      #   sentence = encode_the_words([sentence])
+      #   sentence = pad_features(sentence, 100)
+      #   print(predict_from_model(model, sentence))
 
     else:
       # setting some constants
