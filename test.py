@@ -75,8 +75,8 @@ def main_test():
       print(colored('Loaded pre-trained model.', 'green'))
       index = 2
       # print(len(test_x[index]))
-      # loss, acc = model.evaluate(test_x, test_y)
-      # print('loss:', loss, 'accuracy:', acc)
+      loss, acc = model.evaluate(test_x, test_y)
+      print('loss:', loss, 'accuracy:', acc)
       # pred = model.predict(test_x)
       # print(pred.argmax())
       # print(predict_from_model(model, test_x[index]))
