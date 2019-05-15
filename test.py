@@ -75,7 +75,7 @@ def main_test():
       if sys.argv == 2:
         model = load_model(sys.argv[1])
       else:
-        model = load_model('lstm_model.h5')
+        model = load_model('./models/lstm_model.h5')
       print(model.summary())
       print(colored('Loaded pre-trained model.', 'green'))
       index = 2
@@ -120,7 +120,7 @@ def main_test():
       # model.fit(train_x, train_y, batch_size=128, epochs=5, validation_split=0.1, shuffle=True)
       model.fit(train_x, train_y, batch_size=512, epochs=5, shuffle=True, callbacks=[reduce_lr])
 
-      model.save('lstm_model_saved.h5')
+      model.save('./models/lstm_model_saved.h5')
       # del model 
     print('Test file', colored('successfully', 'green'), 'run.')
 
