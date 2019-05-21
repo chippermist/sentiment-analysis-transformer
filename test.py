@@ -28,7 +28,7 @@ def main_test():
     pre_train = len(sys.argv) == 1
 
 
-    train_data = load_training_data()
+    
     test_data  = load_testing_data()
     # print(train_data.keys())
     # print()
@@ -40,28 +40,6 @@ def main_test():
     # print(len(train_data.get('rating')))
     # print(sum(1 for x in train_data.get('rating') if x == 'neutral'))
 
-    encoded_words  = encode_the_words(train_data['review'])
-    encoded_labels = encode_the_labels(train_data['rating'])
-    # print(colored('Shape of labels is', 'blue'), encoded_labels.shape)
-
-    features       = pad_features(encoded_words, 100)
-    # print(encoded_labels[:5])
-    # print(features[:5,:])
-
-    # print(len(encoded_words))
-    split_frac = 0.8
-    len_feat    = len(features)
-    # print(len(features), len(encoded_labels))
-
-    train_x     = features[0:int(split_frac*len_feat)]
-    train_y     = encoded_labels[0:int(split_frac*len_feat)]
-    remaining_x = features[int(split_frac*len_feat):]
-    remaining_y = encoded_labels[int(split_frac*len_feat):]
-    valid_x     = remaining_x[0:int(len(remaining_x)*0.5)]
-    valid_y     = remaining_y[0:int(len(remaining_y)*0.5)]
-    test_x      = remaining_x[int(len(remaining_x)*0.5):]
-    test_y      = remaining_y[int(len(remaining_y)*0.5):]
-
     encoded_test_words = encode_the_words(test_data['review'])
     test_y             = encode_the_labels(test_data['rating'])
     test_x             = pad_features(encoded_test_words, 100)
@@ -72,10 +50,7 @@ def main_test():
     batch_size = 1024
 
     if pre_train:
-      if sys.argv == 2:
-        model = load_model(sys.argv[1])
-      else:
-        model = load_model('./models/lstm_model.h5')
+      model = load_model('./models/lstm_model.h5')
       print(model.summary())
       print(colored('Loaded pre-trained model.', 'green'))
       index = 2
@@ -99,6 +74,32 @@ def main_test():
       #   print(predict_from_model(model, sentence))
 
     else:
+      # loading training file
+      train_data = load_training_data()
+
+      
+      encoded_words  = encode_the_words(train_data['review'])
+      encoded_labels = encode_the_labels(train_data['rating'])
+      # print(colored('Shape of labels is', 'blue'), encoded_labels.shape)
+
+      features       = pad_features(encoded_words, 100)
+      # print(encoded_labels[:5])
+      # print(features[:5,:])
+
+      # print(len(encoded_words))
+      split_frac  = 1.0
+      len_feat    = len(features)
+      # print(len(features), len(encoded_labels))
+
+      train_x     = features[0:int(split_frac*len_feat)]
+      train_y     = encoded_labels[0:int(split_frac*len_feat)]
+      # remaining_x = features[int(split_frac*len_feat):]
+      # remaining_y = encoded_labels[int(split_frac*len_feat):]
+      # valid_x     = remaining_x[0:int(len(remaining_x)*0.5)]
+      # valid_y     = remaining_y[0:int(len(remaining_y)*0.5)]
+      # test_x      = remaining_x[int(len(remaining_x)*0.5):]
+      # test_y      = remaining_y[int(len(remaining_y)*0.5):]
+
       # setting some constants
       WORDS  = len(encoded_words)
       LENGTH = 100
