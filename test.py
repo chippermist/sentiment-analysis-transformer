@@ -27,7 +27,9 @@ def main_test():
     # checking if we are training or loading
     pre_train = len(sys.argv) == 1
 
-
+    # setting constants 
+    LENGTH = 100 # new model : 150
+    DEPTH  = 32 # new model : 64
     
     test_data  = load_testing_data()
     # print(train_data.keys())
@@ -42,7 +44,7 @@ def main_test():
 
     encoded_test_words = encode_the_words(test_data['review'])
     test_y             = encode_the_labels(test_data['rating'])
-    test_x             = pad_features(encoded_test_words, 150)
+    test_x             = pad_features(encoded_test_words, LENGTH)
 
     batch_size = 1024
 
@@ -79,7 +81,7 @@ def main_test():
       encoded_labels = encode_the_labels(train_data['rating'])
       # print(colored('Shape of labels is', 'blue'), encoded_labels.shape)
 
-      features       = pad_features(encoded_words, 100)
+      features       = pad_features(encoded_words, LENGTH)
       # print(encoded_labels[:5])
       # print(features[:5,:])
 
@@ -102,8 +104,7 @@ def main_test():
 
       # setting some constants
       WORDS  = len(encoded_words)
-      LENGTH = 100 # new model : 150
-      DEPTH  = 32 # new model : 64
+      
 
       # vocab_size = len(encoded_words)
 
