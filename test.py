@@ -102,8 +102,8 @@ def main_test():
 
       # setting some constants
       WORDS  = len(encoded_words)
-      LENGTH = 150
-      DEPTH  = 64
+      LENGTH = 100 # new model : 150
+      DEPTH  = 32 # new model : 64
 
       # vocab_size = len(encoded_words)
 
