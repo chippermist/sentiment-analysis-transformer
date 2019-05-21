@@ -42,10 +42,7 @@ def main_test():
 
     encoded_test_words = encode_the_words(test_data['review'])
     test_y             = encode_the_labels(test_data['rating'])
-    test_x             = pad_features(encoded_test_words, 100)
-
-    print(colored('Shape of X is', 'blue'), train_x.shape)
-    print(colored('Shape of Y is', 'blue'), train_y.shape)
+    test_x             = pad_features(encoded_test_words, 150)
 
     batch_size = 1024
 
@@ -100,10 +97,13 @@ def main_test():
       # test_x      = remaining_x[int(len(remaining_x)*0.5):]
       # test_y      = remaining_y[int(len(remaining_y)*0.5):]
 
+      print(colored('Shape of X is', 'blue'), train_x.shape)
+      print(colored('Shape of Y is', 'blue'), train_y.shape)
+
       # setting some constants
       WORDS  = len(encoded_words)
-      LENGTH = 100
-      DEPTH  = 32
+      LENGTH = 150
+      DEPTH  = 64
 
       # vocab_size = len(encoded_words)
 
