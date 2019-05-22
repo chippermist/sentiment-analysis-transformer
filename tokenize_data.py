@@ -26,8 +26,18 @@ def encode_the_words(data):
   return reviews_int
 
 def encode_the_labels(labels):
-  encoded_labels = [1 if label =='positive' else -1 if label =='negative' else 0 for label in labels]
-  encoded_labels = np.array(encoded_labels)
+  # this needs to be looked at
+  # decision needs to be made to create [1 0 0], [0 1 0] and [0 0 1] or (1, 0, -1)
+  # encoded_labels = [1 if label =='positive' else -1 if label =='negative' else 0 for label in labels]
+  encoded_labels = []
+  for label in labels:
+    if label =='positive':
+      encoded_labels.append([0,0,1])
+    elif label =='negative':
+      encoded_labels.append([1,0,0])
+    else:
+      encoded_labels.append([0,1,0])
+  encoded_labels = np.array(encoded_labels, dtype=np.float32)
   return encoded_labels
   # print (encoded_labels[:10])
 
