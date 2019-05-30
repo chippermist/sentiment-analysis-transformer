@@ -1,3 +1,10 @@
+"""
+This file just performs data analysis on the input csv file
+Usage:
+  This can be used to find out average sentence length in words and then perform sentiment analysis encoding
+  The word lengths can significantly affect the quality of encoding
+  It is recommended to run this on a new dataset if you're not using UCI Medical Data that has been cleaned up.
+"""
 import pandas as pd
 import matplotlib
 matplotlib.use('TkAgg')

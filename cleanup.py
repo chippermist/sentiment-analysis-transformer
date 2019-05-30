@@ -1,3 +1,14 @@
+"""
+This file performs cleanup on the data
+Usage:
+  Directly through this file using __main__
+  Using 'test.py' which will run this automatically
+
+Output: 
+  Generates two cleaned up data csv files within the dataset/drug-data/ folder.
+
+"""
+
 import csv
 from string import punctuation
 from termcolor import colored
