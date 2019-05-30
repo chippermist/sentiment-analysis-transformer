@@ -1,3 +1,10 @@
+"""
+This file loads the data into a dictionary format instead of pandas
+Manual dict construction for easier usage without having model issues
+This is not needed if you plan to use pandas 
+However, major code changed may be needed if this is not utilized.
+"""
+
 import csv
 
 # importing data into a list

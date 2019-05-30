@@ -1,3 +1,26 @@
+"""
+
+This is the main testing file for LSTM dataset
+
+Usage:
+  Can run loaded model (pre-trained)
+  Can train a new model
+
+Semantics:
+  Some parameter values can be chaned to achieve a higher accuracy depending on data
+
+Warning:
+  Before running this file it is recommened that you create a virtualenv as noted in README.
+
+Note:
+  This project along with all used files were written specifically for UCI dataset.
+  For CS273 Sentiment Analysis Project.
+
+  This can be cross compiled with C to run faster.
+
+"""
+
+
 # import std libraries
 import os
 import sys, select
@@ -63,14 +86,20 @@ def main_test():
 
       # UNCOMMENT THIS TO PROVIDE A SENTENCE 
       #######################################
-      # print('Would you like to enter a sentence? (y/n) ')
+      # print(colored('Would you like to enter a sentence? (y/n) ', 'green'))
       # next_step, o, e = select.select( [sys.stdin], [], [], 15)
       # next_step       = sys.stdin.readline().strip()
       # if(next_step == 'y'):
       #   sentence = input('Enter a sentence to classify: ')
       #   sentence = encode_the_words([sentence])
       #   sentence = pad_features(sentence, 100)
-      #   print(predict_from_model(model, sentence))
+      # prediction = predict_from_model(model, sentence)
+      # if prediction == 'positive':
+      #   print(colored(prediction, 'green'))
+      # elif prediction =='neutral':
+      #   print(colored(prediction, 'blue'))
+      # else:
+      #   print(colored(prediction, 'red'))
 
     else:
       # loading training file

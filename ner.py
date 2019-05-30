@@ -1,3 +1,8 @@
+"""
+This file performs NER on the dataset and returns a tree of all the entities
+Uses the nltk library
+"""
+
 import nltk
 from nltk.corpus import stopwords
 from data import load_training_data

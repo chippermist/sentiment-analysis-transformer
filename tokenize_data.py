@@ -1,3 +1,15 @@
+"""
+
+This file tokenizes data for sentiment analysis for LSTM
+
+It created encodings using word lengths and mapping them to a enumerated value.
+There are some length parameters that can be changed while calling the methods from testing.
+The label encoding has been selected as 3-D however, this can also be changed to [-1, 0, 1]
+If so, code changed are required for training and and testing.
+
+
+"""
+
 from collections import Counter
 import numpy as np
 
@@ -42,12 +54,14 @@ def encode_the_labels(labels):
   # print (encoded_labels[:10])
 
 
+"""
 #
 # this is to pad the average review with 0's if it's not the same size
 # since LSTM/Attention/Transformer require same length input 
 # reviews_int             : from encode_the_words
 # padding_length          : user provided based on analysis 
 #
+"""
 def pad_features(reviews_int, padding_length):
   # Return features of review_ints, where each review is padded with 0's or truncated to the input padding_length.
   features = np.zeros((len(reviews_int), padding_length), dtype = int)
