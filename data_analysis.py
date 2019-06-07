@@ -14,10 +14,12 @@ from data import load_testing_data, load_training_data
 
 def analyze_review_length(reviews_int):
   reviews_len = [len(x) for x in reviews_int]
-  pd.Series(reviews_len).hist()
-  # plt.plot(reviews_len)
+  # pd.Series(reviews_len).hist()
+  plt.plot(reviews_len)
+  average = sum(reviews_len)/len(reviews_len)
   plt.show()
-  pd.Series(reviews_len).describe()
+  print('Average is : ', average)
+  # pd.Series(reviews_len).describe()
 
 def perform_data_analysis(raw_data):
   reviews_int = encode_the_words(raw_data.get('review'))

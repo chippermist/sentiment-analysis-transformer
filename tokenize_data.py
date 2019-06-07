@@ -12,10 +12,15 @@ If so, code changed are required for training and and testing.
 
 from collections import Counter
 import numpy as np
+import nltk
+from nltk.corpus import stopwords
+
+stop_words = set(stopwords.words('english'))
 
 def count_total_words(data):
   all_text     = ' '.join(data)
   words        = all_text.split()
+  words = [w.lower() for w in words if not w.lower() in stop_words] 
   # count all the words using Counter Method
   count_words  = Counter(words)
   total_words  = len(words)
@@ -32,7 +37,9 @@ def encode_the_words(data):
   vocab_to_int = vocab_to_int_mapping(data)
   reviews_int  = []
   for review in data:
-      r = [vocab_to_int[w] for w in review.split()]
+      review_tokens = review.split()
+      review_filtered = [word.lower() for word in review_tokens if word.lower() not in stop_words]
+      r = [vocab_to_int[w] for w in review_filtered]
       reviews_int.append(r)
   # print(reviews_int[0:3])
   return reviews_int

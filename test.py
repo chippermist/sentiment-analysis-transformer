@@ -51,8 +51,8 @@ def main_test():
     pre_train = len(sys.argv) == 1
 
     # setting constants 
-    LENGTH = 100 # new model : 150
-    DEPTH  = 32 # new model : 64
+    LENGTH = 100 # new model : 150, Old : 100
+    DEPTH  = 32 # new model : 64, Old: 32
     
     test_data  = load_testing_data()
     # print(train_data.keys())
@@ -77,7 +77,7 @@ def main_test():
       print(colored('Loaded pre-trained model.', 'green'))
       index = 2
       # print(len(test_x[index]))
-      loss, acc = model.evaluate(test_x, test_y)
+      loss, acc = model.evaluate(test_x, test_y, batch_size=256)
       print('loss:', loss, 'accuracy:', acc)
       # pred = model.predict(test_x)
       # print(pred.argmax())
@@ -85,15 +85,15 @@ def main_test():
 
 
       # UNCOMMENT THIS TO PROVIDE A SENTENCE 
-      #######################################
+      ######################################
       # print(colored('Would you like to enter a sentence? (y/n) ', 'green'))
       # next_step, o, e = select.select( [sys.stdin], [], [], 15)
       # next_step       = sys.stdin.readline().strip()
       # if(next_step == 'y'):
       #   sentence = input('Enter a sentence to classify: ')
       #   sentence = encode_the_words([sentence])
-      #   sentence = pad_features(sentence, 100)
-      # prediction = predict_from_model(model, sentence)
+      #   sentence = pad_features(sentence, LENGTH)
+      # prediction = predict_from_model(model, sentence, length_input=LENGTH)
       # if prediction == 'positive':
       #   print(colored(prediction, 'green'))
       # elif prediction =='neutral':
