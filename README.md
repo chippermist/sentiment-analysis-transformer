@@ -14,6 +14,10 @@ Using sentiment analysis, we can figure out based on someone's review and condit
 
 [UCI ML Drug Review dataset](https://www.kaggle.com/jessicali9530/kuc-hackathon-winter-2018)
 
+## Pre-Trained Word Embeddings
+* [Download glove.840B.300d.zip (2.0 GB)](http://nlp.stanford.edu/data/glove.840B.300d.zip) and decompress glove.840B.300d.txt
+    * See [https://nlp.stanford.edu/projects/glove/](https://nlp.stanford.edu/projects/glove/)
+
 
 ## Setup
 
